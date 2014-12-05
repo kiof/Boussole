@@ -1,23 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<pre-dex-items>
+<items version="2" >
 
     <item
-        dex="D:\Temp\Android\ASProjects\Boussole\boussole\build\intermediates\pre-dexed\debug\support-v4-19.1.0-33f6d4e2ac35778c92ee7ff2380b795f206df90f.jar"
-        jar="D:\Temp\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jar="/mnt/System/Temp/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
         jumboMode="false"
-        revision="19.1.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+        revision="21.1.1"
+        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
+        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-d9fcfd3a5c88e77b464ced0d67cd447ecbafd011.jar" />
+    </item>
     <item
-        dex="D:\Temp\Android\ASProjects\Boussole\boussole\build\intermediates\pre-dexed\debug\classes-c9cdfa95111e18de2fe508850b500fd985f8cde1.jar"
-        jar="D:\Temp\Android\ASProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services\5.0.77\classes.jar"
+        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
         jumboMode="false"
-        revision="19.1.0"
-        sha1="b6a82434c1eca686607867cd906bcc80ed987837"/>
+        revision="21.1.1"
+        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
+        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-6d9465eaf02d0a590bdcd73ee5ea28dcff7e172c.jar" />
+    </item>
     <item
-        dex="D:\Temp\Android\ASProjects\Boussole\boussole\build\intermediates\pre-dexed\debug\classes-0ca8220d71fd3ae5e3a840fab2317559f2bb877e.jar"
-        jar="D:\Temp\Android\ASProjects\Boussole\boussole\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
         jumboMode="false"
-        revision="19.1.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+        revision="21.1.1"
+        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
+        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/classes-590c86a58e27a7c1f072d96dc1bde992ea08ae11.jar" />
+    </item>
+    <item
+        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
+        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/classes-73c1d7a6b251f10dfead87b5ae7c7f454020440f.jar" />
+    </item>
+    <item
+        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.1"
+        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
+        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/classes-b3daa402d4dbd91e78a338d317db296983e0fc03.jar" />
+    </item>
 
-</pre-dex-items>
+</items>
