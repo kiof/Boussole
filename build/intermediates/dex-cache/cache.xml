@@ -2,39 +2,88 @@
 <items version="2" >
 
     <item
-        jar="/mnt/System/Temp/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.0/support-annotations-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="1a578b9607b36266c63d43a4fa0ab5664dbe911e">
-        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/support-annotations-21.0.0-d9fcfd3a5c88e77b464ced0d67cd447ecbafd011.jar" />
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="147edbec6bcea71fd675ecc63cae3319637ec2b4">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-9.4.0_42fd63dda4916b705f7e4d1ce5f2ff9ff592b503\classes.dex" />
     </item>
     <item
-        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/libs/internal_impl-21.0.0.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="1609e6d42d0480b0f4188e2c29f75388fa12a8f0">
-        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/internal_impl-21.0.0-6d9465eaf02d0a590bdcd73ee5ea28dcff7e172c.jar" />
+        jar="C:\Utilisateurs\fr20222\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.0\support-annotations-23.0.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="990e7f98a7bad86a40b1f0bcfeb039023afd0839">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.0.0_ecb36c7c6620b0fe882ab5a805be2b01653baf6e\classes.dex" />
     </item>
     <item
-        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="95fd37732ec852e99f07eeb516a3650172f1d136">
-        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/classes-590c86a58e27a7c1f072d96dc1bde992ea08ae11.jar" />
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="8a36d229011e75f0caef408e1adf0d3fd4d94e02">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-9.4.0_3ab4272db70ae5efec3ff07b1768a810eaa333d9\classes.dex" />
     </item>
     <item
-        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.1.71/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="0f6d5c1ef2e982c3b7858408e3df389cf5d202da">
-        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/classes-73c1d7a6b251f10dfead87b5ae7c7f454020440f.jar" />
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="ab30bf7ccad9abc0806f455490734a56078436db">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_595e8b5fb213ff8d523ef9eb48f703e98487432c\classes.dex" />
     </item>
     <item
-        jar="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.0/classes.jar"
-        jumboMode="false"
-        revision="21.1.1"
-        sha1="686344a780033e4ba22b926cd225f8d4941247e6">
-        <dex dex="/mnt/System/Temp/Android/ASProjects/Boussole/boussole/build/intermediates/pre-dexed/debug/classes-b3daa402d4dbd91e78a338d317db296983e0fc03.jar" />
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3dee4ce5844d39d843d503fb8fe04e51e5bfffac">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-9.4.0_5fd55e54695427ea40fb1cb1da315b10d5c4b113\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="8413c27b45b7fe61dca4a98159f65e2cee215f5a">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.0.0_bd7ed22aa500a1576548cf4be6fe9ca54a999a56\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="87dc4441a9ee28b2fb4e7ed1f9304d5463a9b0d9">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_92e834e14bcd0dc50b2a9b60d21f63b7bed53e83\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="dd763e0269f2854f5828ae62dd968b80bff6a0db">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-9.4.0_281815e524057b001cb13792cd78f5d2e330d74a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="b15f898c9047f9d612a63000126b485dd024eaac">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-9.4.0_2919f689ffc716cdede3f681a4db9cd08f19cb96\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="618485fef3ebe12127f7622abbc9b5b39057b5c2">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-9.4.0_3aa3f1d17987ac2c09c2b5ec40a4c4dcfd7108aa\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\9.4.0\jars\classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="d463d8eec1e6c1feef2cec6675ccb47e37c12ee1">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-9.4.0_c6e0b847d0b1f96a4fc364643b65caec7039cddb\classes.dex" />
+    </item>
+    <item
+        jar="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.0\jars\libs\internal_impl-23.0.0.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="8bd336eeae661e8311330284897ee07f8ebaa297">
+        <dex dex="C:\Utilisateurs\fr20222\Temp\AndroidStudioProjects\Boussole\boussole\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.0.0_b0ead579d77f5c823b39bb4fb432f883748b0e6b\classes.dex" />
     </item>
 
 </items>
