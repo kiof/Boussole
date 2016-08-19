@@ -1,7 +1,3 @@
 <component name="CopyrightManager">
-  <settings default="Copyright KioF">
-    <module2copyright>
-      <element module="All" copyright="Copyright KioF" />
-    </module2copyright>
-  </settings>
+  <settings default="" />
 </component>
