@@ -1,6 +1,5 @@
 package com.kiof.boussole;
 
-import java.util.List;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,22 +20,21 @@ import android.view.MenuItem;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
+import java.util.List;
 
 public class Boussole extends Activity {
+	private static final String SOUND = "sound";
+	private static final int MARGE = 2;
+	private static final String TAG = "BOUSSOLE";
 	private Context mContext;
 	private SharedPreferences mSharedPreferences;
 	private CompassView mCompassView;
 	private SensorManager mSensorManager;
 	private Sensor sensor;
 	private MediaPlayer mMediaPlayer;
-	
 	private int angle;
-
-	private static final String SOUND = "sound";
-	private static int RETURN_SETTING = 1;
-	private static final int MARGE = 2;
-	private static final String TAG = "BOUSSOLE";
-	
 	//Notre listener sur le capteur de la boussole numérique
 	private final SensorEventListener sensorListener = new SensorEventListener() {
 		@Override
@@ -61,8 +59,10 @@ public class Boussole extends Activity {
 
 		setContentView(R.layout.main);
 
-        AdView adView = (AdView) this.findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
+		// AdMob
+		MobileAds.initialize(getApplicationContext(), getString(R.string.ad_unit_id));
+		AdView adView = (AdView) this.findViewById(R.id.adView);
+		AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
 //                .addTestDevice("53356E870D99B80A68F8E2DBBFCD28FB")
                 .build();
@@ -135,7 +135,7 @@ public class Boussole extends Activity {
 		// Handle item selection
 		switch (item.getItemId()) {
 		case R.id.setting:
-			startActivityForResult(new Intent(Boussole.this, Setting.class), RETURN_SETTING);
+			startActivityForResult(new Intent(Boussole.this, Setting.class), 1);
 			return true;
 		case R.id.share:
 			Intent sharingIntent = new Intent(Intent.ACTION_SEND);
@@ -168,7 +168,7 @@ public class Boussole extends Activity {
 		mp.setOnCompletionListener(new OnCompletionListener() {
 			public void onCompletion(MediaPlayer mp) {
 				mp.release();
-			};
+			}
 		});
 		mp.start();
 		return mp.getDuration();

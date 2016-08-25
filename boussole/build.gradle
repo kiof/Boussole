@@ -2,16 +2,30 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion '24.0.1'
-
+    buildToolsVersion '24.0.2'
     defaultConfig {
         applicationId 'com.kiof.boussole'
         minSdkVersion 10
         targetSdkVersion 24
-        versionCode 5
-        versionName '1.4'
+        versionCode 6
+        versionName '1.5'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    productFlavors {
     }
 }
 dependencies {
+    // AdMob
     compile 'com.google.android.gms:play-services-ads:9.4.0'
+    // Firebase
+    compile 'com.google.firebase:firebase-core:9.4.0'
+    compile 'com.google.firebase:firebase-ads:9.4.0'
+    // Analytics
+    compile 'com.google.android.gms:play-services-analytics:9.4.0'
 }
+
+// Firebase & Analytics
+apply plugin: 'com.google.gms.google-services'

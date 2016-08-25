@@ -208,7 +208,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class raw {
         public static final int about=0x7f050000;
         public static final int bgmusic=0x7f050001;
-        public static final int turn=0x7f050002;
+        public static final int gtm_analytics=0x7f050002;
+        public static final int turn=0x7f050003;
     }
     public static final class string {
         public static final int Ok=0x7f060014;
@@ -241,7 +242,14 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int create_calendar_message=0x7f060031;
         public static final int create_calendar_title=0x7f060032;
         public static final int decline=0x7f060033;
+        public static final int default_web_client_id=0x7f060034;
         public static final int explain=0x7f060019;
+        public static final int firebase_database_url=0x7f060035;
+        public static final int gcm_defaultSenderId=0x7f060036;
+        public static final int google_api_key=0x7f060037;
+        public static final int google_app_id=0x7f060038;
+        public static final int google_crash_reporting_api_key=0x7f060039;
+        public static final int google_storage_bucket=0x7f06003a;
         public static final int menuTitle1=0x7f06001a;
         public static final int menuTitle2=0x7f06001b;
         public static final int menuTitle3=0x7f06001c;
@@ -261,8 +269,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int share_with=0x7f06002a;
         public static final int sound_summary=0x7f06002b;
         public static final int sound_title=0x7f06002c;
-        public static final int store_picture_message=0x7f060034;
-        public static final int store_picture_title=0x7f060035;
+        public static final int store_picture_message=0x7f06003b;
+        public static final int store_picture_title=0x7f06003c;
         public static final int title=0x7f06002d;
         public static final int widget_name=0x7f06002e;
     }
@@ -270,7 +278,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int Theme_IAPTheme=0x7f090000;
     }
     public static final class xml {
-        public static final int setting=0x7f040000;
+        public static final int app_tracker=0x7f040000;
+        public static final int setting=0x7f040001;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
