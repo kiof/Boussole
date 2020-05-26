@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.arbelkilani:Compass-View:v1.1.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/551dfa905577f687f583930da59b04f4/jetified-Compass-View-v1.1.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/551dfa905577f687f583930da59b04f4/jetified-Compass-View-v1.1.1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.arbelkilani/Compass-View/v1.1.1/92ffb33dc2a1c200623d8f628b630de6b2cc15bb/Compass-View-v1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
