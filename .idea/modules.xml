@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-Boussole.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-Boussole.iml" group="Boussole" />
       <module fileurl="file://$PROJECT_DIR$/Boussole.iml" filepath="$PROJECT_DIR$/Boussole.iml" group="Boussole" />
       <module fileurl="file://$PROJECT_DIR$/boussole/boussole.iml" filepath="$PROJECT_DIR$/boussole/boussole.iml" group="Boussole/boussole" />
     </modules>

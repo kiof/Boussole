@@ -21,20 +21,19 @@ android {
         jvmTarget = "1.8"
     }
 }
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.2.0'
     implementation 'androidx.preference:preference-ktx:1.1.1'
     implementation 'com.github.arbelkilani:Compass-View:v1.1.1'
-
     // Location
     implementation 'com.google.android.gms:play-services-location:17.0.0'
     // AdMob
     implementation 'com.google.android.gms:play-services-ads:19.1.0'
-    // Firebase
-    implementation 'com.google.firebase:firebase-core:17.4.2'
-    implementation 'com.google.firebase:firebase-ads:19.1.0'
     // Analytics
     implementation 'com.google.android.gms:play-services-analytics:17.0.0'
+
+    implementation 'com.github.NaimishTrivedi:FBToast:1.0'
 }

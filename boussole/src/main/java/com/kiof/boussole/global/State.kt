@@ -1,6 +1,5 @@
-package com.kiof.boussole.global;
+package com.kiof.boussole.global
 
-public enum State {
-
+enum class State {
     defaultState, morningState, eveningState, nightState
 }

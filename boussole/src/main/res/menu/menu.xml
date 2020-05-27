@@ -1,0 +1,62 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".TimerActivity">
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_location"
+        android:orderInCategory="0"
+        android:title="@string/menuTitle0"
+        android:titleCondensed="@string/menuTitleCondensed0"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings"
+        android:orderInCategory="1"
+        android:title="@string/menuTitle1"
+        android:titleCondensed="@string/menuTitleCondensed1"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/remove_ads"
+        android:icon="@drawable/icons8_remove_ads_48"
+        android:orderInCategory="2"
+        android:title="@string/menuTitle2"
+        android:titleCondensed="@string/menuTitleCondensed2"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/share"
+        android:icon="@android:drawable/ic_menu_share"
+        android:orderInCategory="3"
+        android:title="@string/menuTitle3"
+        android:titleCondensed="@string/menuTitleCondensed3"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/other"
+        android:icon="@android:drawable/ic_menu_more"
+        android:orderInCategory="4"
+        android:title="@string/menuTitle4"
+        android:titleCondensed="@string/menuTitleCondensed3"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/about"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:orderInCategory="5"
+        android:title="@string/menuTitle5"
+        android:titleCondensed="@string/menuTitleCondensed5"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/quit"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:orderInCategory="6"
+        android:title="@string/menuTitle6"
+        android:titleCondensed="@string/menuTitleCondensed6"
+        app:showAsAction="never" />
+
+</menu>
