@@ -3,8 +3,8 @@
 
     <!--    <string name="pub_banner">ca-app-pub-3294765052683520/7288163607</string>-->
     <!--    Test-->
-    <string name="pub_banner" translatable="false">app:adUnitId="ca-app-pub-3940256099942544/6300978111"</string>
-    <!--    <string name="pub_reward">ca-app-pub-xxx/yyy</string>-->
+    <string name="pub_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <!--    <string name="pub_reward">ca-app-pub-3294765052683520/3503482463</string>-->
     <!--    Test-->
     <string name="pub_reward" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
 
@@ -53,6 +53,12 @@
     <string name="menuTitleCondensed6">Quit</string>
 
     <string name="RewardMessage">No more Ad for 24h :-)</string>
+    <string name="location_request">Location request</string>
 
+    <string name="preference_category_features">Features</string>
+    <string name="sound_title">Sound</string>
+    <string name="sound_summary">Play sounds of the application</string>
+    <string name="save_setting">Save settings</string>
+    <string name="setting_saved">Settings saved</string>
 
 </resources>

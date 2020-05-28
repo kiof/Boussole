@@ -15,6 +15,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
@@ -27,6 +28,7 @@ import com.kiof.boussole.global.HtmlAlertDialog
 import com.kiof.boussole.global.PrefUtil
 import com.kiof.boussole.global.solar.SunriseSunsetCalculator
 import com.tfb.fbtoast.FBToast
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -52,9 +54,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        setSupportActionBar(toolbar)
-        supportActionBar?.setIcon(R.drawable.icon)
+        setSupportActionBar(toolbar)
+//        supportActionBar?.setIcon(R.drawable.icon)
         supportActionBar?.title = getString(R.string.app_name)
+
+        PreferenceManager.getDefaultSharedPreferences(this.applicationContext)
 
         mMainView = findViewById(R.id.main_layout)
         mMainView.background = ContextCompat.getDrawable(
@@ -214,6 +218,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_settings -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.settings_layout, SettingsFragment()).commit()
                 true
             }
             R.id.remove_ads -> {
