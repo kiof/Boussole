@@ -14,10 +14,10 @@
     <string name="location_reason">this is message location</string>
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
-    <string name="standard_greeting">Hello!</string>
+    <string name="standard_greeting">Hello !</string>
     <string name="allow_location_permission">Allowing access to your location only help to improve application features.</string>
     <string name="location_permission_allowed">If you want to disable location permission for this application, access to your application settings and disable it.</string>
-    <string name="credit">© 2020 KioF</string>
+    <string name="credit" translatable="false">© 2020 KioF</string>
     <string name="location_dialog_title">Allow access your location ?</string>
     <string name="allow">Allow</string>
     <string name="dont_allow">Don\'t allow</string>
@@ -60,5 +60,7 @@
     <string name="sound_summary">Play sounds of the application</string>
     <string name="save_setting">Save settings</string>
     <string name="setting_saved">Settings saved</string>
+    <string name="title">Compass</string>
+    <string name="changelog_title">About</string>
 
 </resources>

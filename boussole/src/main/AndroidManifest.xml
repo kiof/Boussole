@@ -27,11 +27,6 @@
             android:launchMode="singleTop"
             android:screenOrientation="fullSensor" />
 
-        <activity
-            android:name=".SettingsFragment"
-            android:screenOrientation="fullSensor"
-            android:theme="@style/Theme.AppCompat" />
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3294765052683520~6090632006" />

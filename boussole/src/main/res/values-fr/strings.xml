@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources> 
     <string name="app_name">Boussole</string>
-    <string name="widget_name">Boussole</string>
     <string name="title">Boussole</string>
-	<string name="button">...</string>
-	<string name="explain">Alignez l\'aiguille rouge sur le Nord.
-	    L\'aiguille rouge montre le Nord et la Rose des Vents montre les autres directions.</string>
 
-	<string name="Ok">OK</string>
+    <string name="Ok">OK</string>
 	<string name="changelog_title">Nouveautés</string>
 	<string name="about_title">A propos</string>
  
@@ -34,5 +30,25 @@
     <string name="menuTitle6">Quitter l\'application</string>
     <string name="menuTitleCondensed0">Position</string>
     <string name="menuTitle0">Autoriser le positionnement</string>
+    <string name="morning_greeting">Bonjour !</string>
+    <string name="afternoon_greeting">Bon après-midi !</string>
+    <string name="night_greeting">Bonne soirée !</string>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annuler</string>
+    <string name="standard_greeting">Bonjour !</string>
+    <string name="location_reason">C\'est la demande de positionnement</string>
+    <string name="allow_location_permission">Autoriser l\'accès à votre position ne contribue qu\'à améliorer les fonctionnalités de l\'application.</string>
+    <string name="location_permission_allowed">Si vous souhaitez désactiver l\'autorisation de localisation pour cette application, accédez aux paramètres de votre application et désactivez-la.</string>
+    <string name="location_dialog_title">Autoriser l\'accès à votre emplacement?</string>
+    <string name="allow">Autoriser</string>
+    <string name="dont_allow">Ne pas autoriser</string>
+    <string name="location_on_title">L\'emplacement est fourni!</string>
+    <string name="quit_title">Quitter ?</string>
+    <string name="quit_message">Voulez-vous quitter l\'application ?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="goingon">L\'application continue</string>
+    <string name="RewardMessage">Plus de pub pendant 24h :-)</string>
+    <string name="location_request">Demande de positionnement</string>
 
 </resources>

@@ -31,7 +31,7 @@ import com.tfb.fbtoast.FBToast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-class MainActivity : AppCompatActivity(), View.OnClickListener {
+class MainActivity : AppCompatActivity() {
     private lateinit var mMainView: View
     private lateinit var mGreetingTextView: TextView
     private lateinit var mPositionTextView: TextView
@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         mGreetingTextView = findViewById(R.id.tv_greeting)
         mGreetingTextView.setText(R.string.standard_greeting)
-        findViewById<View>(R.id.iv_location).setOnClickListener(this)
         mPositionTextView = findViewById(R.id.tv_position)
         val bundle = intent.extras
         if (bundle != null && bundle.containsKey(BACKGROUND) && bundle.containsKey(
@@ -217,9 +216,19 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.settings_layout, SettingsFragment()).commit()
+            R.id.location -> {
+                if (ActivityCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.ACCESS_FINE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                        this,
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED
+                ) {
+                    askForLocationDialog()
+                } else {
+                    locationProvidedDialog()
+                }
                 true
             }
             R.id.remove_ads -> {
@@ -317,25 +326,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-    override fun onClick(v: View) {
-        when (v.id) {
-            R.id.iv_location -> if (ActivityCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.ACCESS_FINE_LOCATION
-                ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                    this,
-                    Manifest.permission.ACCESS_COARSE_LOCATION
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                askForLocationDialog()
-            } else {
-                locationProvidedDialog()
-            }
-            else -> {
-            }
         }
     }
 

@@ -12,14 +12,6 @@
         app:showAsAction="always" />
 
     <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_settings"
-        android:orderInCategory="1"
-        android:title="@string/menuTitle1"
-        android:titleCondensed="@string/menuTitleCondensed1"
-        app:showAsAction="always" />
-
-    <item
         android:id="@+id/remove_ads"
         android:icon="@drawable/icons8_remove_ads_48"
         android:orderInCategory="2"
