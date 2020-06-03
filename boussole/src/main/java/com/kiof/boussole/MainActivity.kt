@@ -22,11 +22,9 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdCallback
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
-import com.google.android.gms.location.FusedLocationProviderClient
 import com.kiof.boussole.global.AppUtils
 import com.kiof.boussole.global.HtmlAlertDialog
 import com.kiof.boussole.global.PrefUtil
-import com.kiof.boussole.global.solar.SunriseSunsetCalculator
 import com.tfb.fbtoast.FBToast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -114,90 +112,6 @@ class MainActivity : AppCompatActivity() {
                 R.drawable.bg_default
             )
             mGreetingTextView.setText(R.string.standard_greeting)
-        }
-    }
-
-    /**
-     *
-     */
-    private fun initialize() {
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            return
-        }
-        val fusedLocationProviderClient =
-            FusedLocationProviderClient(applicationContext)
-        fusedLocationProviderClient.lastLocation
-            .addOnSuccessListener { location ->
-                if (location != null) {
-                    updateDayState(location)
-                    mPositionTextView.visibility = View.VISIBLE
-                    mPositionTextView.text = AppUtils.convert(
-                        location.latitude,
-                        location.longitude
-                    )
-                }
-            }
-    }
-
-    /**
-     * @param location
-     */
-    private fun updateDayState(location: Location) {
-        val location1 =
-            com.kiof.boussole.global.solar.Location(location.latitude, location.longitude)
-        val sunriseSunsetCalculator =
-            SunriseSunsetCalculator(location1, Calendar.getInstance().timeZone)
-        val sunrise =
-            sunriseSunsetCalculator.getOfficialSunriseCalendarForDate(Calendar.getInstance())
-                ?.time
-        val sunset =
-            sunriseSunsetCalculator.getOfficialSunsetCalendarForDate(Calendar.getInstance())
-                ?.time
-        val current = Calendar.getInstance().time
-        val calendar = Calendar.getInstance()
-        calendar[Calendar.HOUR_OF_DAY] = 12
-        calendar[Calendar.MINUTE] = 30
-        calendar[Calendar.SECOND] = 0
-        val noon = calendar.time
-        val calendar1 = Calendar.getInstance()
-        calendar1[Calendar.HOUR_OF_DAY] = 0
-        calendar1[Calendar.MINUTE] = 0
-        calendar1[Calendar.SECOND] = 0
-        val midNight = calendar1.time
-        if (current.after(midNight)) {
-            mMainView.background = ContextCompat.getDrawable(
-                applicationContext,
-                R.drawable.bg_night
-            )
-            mGreetingTextView.setText(R.string.night_greeting)
-            if (current.after(sunrise)) {
-                mMainView.background = ContextCompat.getDrawable(
-                    applicationContext,
-                    R.drawable.bg_morning
-                )
-                mGreetingTextView.setText(R.string.morning_greeting)
-                if (current.after(noon)) {
-                    mMainView.background = ContextCompat.getDrawable(
-                        applicationContext,
-                        R.drawable.bg_evening
-                    )
-                    mGreetingTextView.setText(R.string.afternoon_greeting)
-                    if (current.after(sunset)) {
-                        mMainView.background = ContextCompat.getDrawable(
-                            applicationContext,
-                            R.drawable.bg_night
-                        )
-                        mGreetingTextView.setText(R.string.night_greeting)
-                    }
-                }
-            }
         }
     }
 
