@@ -1,12 +1,10 @@
 <resources>
     <string name="app_name">Compass</string>
 
-    <!--    <string name="pub_banner" translatable="false">ca-app-pub-3294765052683520/7288163607</string>-->
-    <!--    Test-->
-    <string name="pub_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <!--    <string name="pub_reward" translatable="false">ca-app-pub-3294765052683520/3503482463</string>-->
-    <!--    Test-->
-    <string name="pub_reward" translatable="false">ca-app-pub-3940256099942544/5224354917</string>
+    <string name="pub_banner" translatable="false">ca-app-pub-3294765052683520/7288163607</string>
+    <!--    &lt;!&ndash;    Test&ndash;&gt;<string name="pub_banner" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="pub_reward" translatable="false">ca-app-pub-3294765052683520/3503482463</string>
+    <!--    &lt;!&ndash;    Test&ndash;&gt;<string name="pub_reward" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
 
     <string name="morning_greeting">Good morning!</string>
     <string name="afternoon_greeting">Good afternoon!</string>
