@@ -17,7 +17,7 @@
         android:orderInCategory="2"
         android:title="@string/menuTitle2"
         android:titleCondensed="@string/menuTitleCondensed2"
-        app:showAsAction="always" />
+        app:showAsAction="never|withText" />
 
     <item
         android:id="@+id/share"

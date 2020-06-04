@@ -19,10 +19,12 @@ import androidx.preference.PreferenceManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdCallback
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.kiof.boussole.global.AppUtils
 import com.kiof.boussole.global.HtmlAlertDialog
 import com.kiof.boussole.global.PrefUtil
@@ -31,13 +33,14 @@ import com.tfb.fbtoast.FBToast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mMainView: View
     private lateinit var mGreetingTextView: TextView
     private lateinit var mPositionTextView: TextView
     private lateinit var mMenuItem: MenuItem
     private lateinit var mAdView: AdView
     private lateinit var mRewardedAd: RewardedAd
+    private lateinit var mEfab: ExtendedFloatingActionButton
 
     companion object {
         const val BACKGROUND = "background"
@@ -65,6 +68,9 @@ class MainActivity : AppCompatActivity() {
             applicationContext,
             R.drawable.bg_default
         )
+
+        mEfab = findViewById(R.id.fab_noads)
+        mEfab.setOnClickListener(this)
 
         mAdView = findViewById(R.id.adView)
         // Initialize and load Ads
@@ -232,46 +238,7 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.remove_ads -> {
-                if (this::mRewardedAd.isInitialized && mRewardedAd.isLoaded) {
-                    val adCallback = object : RewardedAdCallback() {
-                        override fun onRewardedAdOpened() {
-                            // Ad opened.
-                        }
-
-                        override fun onRewardedAdClosed() {
-                            mRewardedAd = createAndLoadRewardedAd()
-                        }
-
-                        override fun onUserEarnedReward(
-                            p0: com.google.android.gms.ads.rewarded.RewardItem
-                        ) {
-                            // User earned reward.
-                            mMenuItem.isVisible = false
-                            mAdView.visibility = View.GONE
-                            PrefUtil.setRemoveAds(
-                                nowSeconds + 1000 * 60 * 60 * 24,
-                                applicationContext
-                            )
-                            FBToast.infoToast(
-                                applicationContext,
-                                getString(R.string.RewardMessage),
-                                FBToast.LENGTH_SHORT
-                            )
-
-                        }
-
-                        override fun onRewardedAdFailedToShow(errorCode: Int) {
-                            // Ad failed to display.
-                        }
-                    }
-                    mRewardedAd.show(this, adCallback)
-                } else {
-                    FBToast.warningToast(
-                        applicationContext,
-                        "The rewarded ad wasn't loaded yet.",
-                        FBToast.LENGTH_SHORT
-                    )
-                }
+                showRewardedAd()
                 true
             }
             R.id.share -> {
@@ -326,6 +293,49 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showRewardedAd() {
+        if (this::mRewardedAd.isInitialized && mRewardedAd.isLoaded) {
+            val adCallback = object : RewardedAdCallback() {
+                override fun onRewardedAdOpened() {
+                    // Ad opened.
+                }
+
+                override fun onRewardedAdClosed() {
+                    mRewardedAd = createAndLoadRewardedAd()
+                }
+
+                override fun onUserEarnedReward(
+                    p0: RewardItem
+                ) {
+                    // User earned reward.
+                    mMenuItem.isVisible = false
+                    mAdView.visibility = View.GONE
+                    mEfab.visibility = View.GONE
+                    PrefUtil.setRemoveAds(
+                        nowSeconds + 1000 * 60 * 60 * 24,
+                        applicationContext
+                    )
+                    FBToast.infoToast(
+                        applicationContext,
+                        getString(R.string.RewardMessage),
+                        FBToast.LENGTH_SHORT
+                    )
+                }
+
+                override fun onRewardedAdFailedToShow(errorCode: Int) {
+                    // Ad failed to display.
+                }
+            }
+            mRewardedAd.show(this, adCallback)
+        } else {
+            FBToast.warningToast(
+                applicationContext,
+                "The rewarded ad wasn't loaded yet.",
+                FBToast.LENGTH_SHORT
+            )
         }
     }
 
@@ -400,5 +410,21 @@ class MainActivity : AppCompatActivity() {
         }
         rewardedAd.loadAd(AdRequest.Builder().build(), adLoadCallback)
         return rewardedAd
+    }
+
+    /**
+     * Called when a view has been clicked.
+     *
+     * @param v The view that was clicked.
+     */
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.fab_noads -> if (mEfab.isExtended) {
+                mEfab.shrink()
+                showRewardedAd()
+            } else {
+                mEfab.extend()
+            }
+        }
     }
 }

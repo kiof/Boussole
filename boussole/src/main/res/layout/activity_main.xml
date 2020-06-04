@@ -5,8 +5,8 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -53,16 +53,16 @@
         android:layout_height="0dp"
         android:layout_centerInParent="true"
         android:layout_margin="40dp"
+        android:gravity="center"
         app:degree_color="@android:color/white"
         app:degree_value_color="@android:color/white"
-        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:orientation_labels_color="@android:color/white"
         app:show_degree_value="true"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
         app:show_orientation_labels="true" />
 
     <com.google.android.gms.ads.AdView
@@ -70,8 +70,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@color/colorPrimary"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:adSize="SMART_BANNER"
-        app:adUnitId="@string/pub_banner" />
+        app:adUnitId="@string/pub_banner"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fab_noads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:focusable="true"
+        android:text="@string/fab_noads"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#33000000"
+        app:icon="@drawable/icons8_remove_ads_48"
+        app:iconTint="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
