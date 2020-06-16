@@ -14,10 +14,9 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#33000000"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/ThemeOverlay.AppCompat" />
+    />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -74,18 +73,19 @@
         app:adUnitId="@string/pub_banner"
         app:layout_constraintBottom_toBottomOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fab_noads"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:focusable="true"
-        android:text="@string/fab_noads"
-        android:textColor="@android:color/white"
-        app:backgroundTint="#33000000"
-        app:icon="@drawable/icons8_remove_ads_48"
-        app:iconTint="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/adView"
-        app:layout_constraintStart_toStartOf="parent" />
+    <!--    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton-->
+    <!--        android:id="@+id/fab_noads"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="16dp"-->
+    <!--        android:focusable="true"-->
+    <!--        android:text="@string/fab_noads"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        app:backgroundTint="#33000000"-->
+    <!--        app:icon="@drawable/icons8_remove_ads_48"-->
+    <!--        app:iconTint="@android:color/white"-->
+    <!--        app:layout_constraintBottom_toTopOf="@+id/adView"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

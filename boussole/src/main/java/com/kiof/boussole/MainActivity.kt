@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -24,7 +25,6 @@ import com.google.android.gms.ads.rewarded.RewardedAd
 import com.google.android.gms.ads.rewarded.RewardedAdCallback
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.kiof.boussole.global.AppUtils
 import com.kiof.boussole.global.HtmlAlertDialog
 import com.kiof.boussole.global.PrefUtil
@@ -40,7 +40,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var mMenuItem: MenuItem
     private lateinit var mAdView: AdView
     private lateinit var mRewardedAd: RewardedAd
-    private lateinit var mEfab: ExtendedFloatingActionButton
+
+    //    private lateinit var mEfab: ExtendedFloatingActionButton
+    private lateinit var mHandler: Handler
 
     companion object {
         const val BACKGROUND = "background"
@@ -69,13 +71,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.drawable.bg_default
         )
 
-        mEfab = findViewById(R.id.fab_noads)
-        mEfab.setOnClickListener(this)
+//        mEfab = findViewById(R.id.fab_noads)
+//        mEfab.setOnClickListener(this)
+//        mEfab.shrink()
+//        val mHandler = Handler()
+//        val mRunnable = Runnable {
+//            run {
+//                animateFab()
+////                mHandler.postDelayed(mRunnable, 10000)
+//            }
+//        };
+//        mHandler.postDelayed(mRunnable, 10000)
+//        mHandler.postDelayed(mRunnable, 20000)
+//        mHandler.postDelayed(Runnable { run { shrinkFab() } }, 30000)
 
         mAdView = findViewById(R.id.adView)
         // Initialize and load Ads
         MobileAds.initialize(this) {}
-        if (nowSeconds > PrefUtil.getRemoveAds(this)) {
+        if (nowSeconds > PrefUtil.getRemoveAds(applicationContext)) {
             mAdView.loadAd(AdRequest.Builder().build())
             mRewardedAd = createAndLoadRewardedAd()
         }
@@ -128,10 +141,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      */
     private fun initialize() {
         if (ActivityCompat.checkSelfPermission(
-                this,
+                applicationContext,
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
+                applicationContext,
                 Manifest.permission.ACCESS_COARSE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
@@ -211,7 +224,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu, menu)
         mMenuItem = menu.findItem(R.id.remove_ads)
-        if (nowSeconds > PrefUtil.getRemoveAds(this)) {
+        if (nowSeconds > PrefUtil.getRemoveAds(applicationContext)) {
             mAdView.visibility = View.VISIBLE
         } else {
             mMenuItem.isVisible = false
@@ -224,10 +237,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         return when (item.itemId) {
             R.id.location -> {
                 if (ActivityCompat.checkSelfPermission(
-                        this,
+                        applicationContext,
                         Manifest.permission.ACCESS_FINE_LOCATION
                     ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                        this,
+                        applicationContext,
                         Manifest.permission.ACCESS_COARSE_LOCATION
                     ) != PackageManager.PERMISSION_GRANTED
                 ) {
@@ -257,7 +270,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.about -> {
                 HtmlAlertDialog(
-                    this,
+                    applicationContext,
                     R.raw.about,
                     getString(R.string.about_title),
                     android.R.drawable.ic_menu_info_details
@@ -272,7 +285,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.quit -> {
                 // Create out AlterDialog
-                val builder: AlertDialog.Builder = AlertDialog.Builder(this)
+                val builder: AlertDialog.Builder = AlertDialog.Builder(applicationContext)
                 builder.setTitle(R.string.quit_title)
                 builder.setIcon(android.R.drawable.ic_menu_close_clear_cancel)
                 builder.setMessage(R.string.quit_message)
@@ -313,7 +326,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     // User earned reward.
                     mMenuItem.isVisible = false
                     mAdView.visibility = View.GONE
-                    mEfab.visibility = View.GONE
+//                    mEfab.visibility = View.GONE
                     PrefUtil.setRemoveAds(
                         nowSeconds + 1000 * 60 * 60 * 24,
                         applicationContext
@@ -333,7 +346,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         } else {
             FBToast.warningToast(
                 applicationContext,
-                "The rewarded ad wasn't loaded yet.",
+                getString(R.string.AdsNotLoaded),
                 FBToast.LENGTH_SHORT
             )
         }
@@ -398,7 +411,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     fun createAndLoadRewardedAd(): RewardedAd {
-        val rewardedAd = RewardedAd(this, getString(R.string.pub_reward))
+        val rewardedAd = RewardedAd(applicationContext, getString(R.string.pub_reward))
         val adLoadCallback = object : RewardedAdLoadCallback() {
             override fun onRewardedAdLoaded() {
                 // Ad successfully loaded.
@@ -418,13 +431,27 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
      * @param v The view that was clicked.
      */
     override fun onClick(v: View?) {
-        when (v?.id) {
-            R.id.fab_noads -> if (mEfab.isExtended) {
-                mEfab.shrink()
-                showRewardedAd()
-            } else {
-                mEfab.extend()
-            }
-        }
+//        when (v?.id) {
+//            R.id.fab_noads -> if (mEfab.isExtended) {
+//                mEfab.shrink()
+//                showRewardedAd()
+//            } else {
+//                mEfab.extend()
+//            }
+//        }
     }
+
+//    private fun animateFab() {
+//        val mAnimation = AnimationUtils.loadAnimation(applicationContext, R.anim.shake)
+////        mAnimation.duration = 200L
+//        if (!mEfab.isExtended) {
+//            mEfab.extend()
+//        }
+//        mEfab.startAnimation(mAnimation)
+//    }
+//
+//    private fun shrinkFab() {
+//        mEfab.shrink()
+//    }
+
 }
